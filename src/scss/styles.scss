@@ -1,0 +1,40 @@
+// General
+@import 'includes/base/vars';
+@import 'includes/base/mixins';
+@import 'includes/base/fonts';
+@import 'includes/base/utils';
+@import 'includes/base/global';
+
+// Blocks
+@import 'includes/blocks/about-us';
+@import 'includes/blocks/article';
+@import 'includes/blocks/btn';
+@import 'includes/blocks/carousel';
+@import 'includes/blocks/content';
+@import 'includes/blocks/cta';
+@import 'includes/blocks/hero';
+@import 'includes/blocks/join-team';
+@import 'includes/blocks/modal';
+@import 'includes/blocks/photos';
+@import 'includes/blocks/press';
+@import 'includes/blocks/review';
+@import 'includes/blocks/select-company';
+@import 'includes/blocks/select';
+@import 'includes/blocks/social';
+@import 'includes/blocks/stealth-companies';
+@import 'includes/blocks/team';
+@import 'includes/blocks/ticker';
+@import 'includes/blocks/title';
+@import 'includes/blocks/why-atomic';
+// Vendor
+ @import 'includes/vendor/slick/slick';
+ @import 'includes/vendor/jquery.fancybox';
+// Templates
+ @import 'templates/company';
+ @import 'templates/home';
+ @import 'templates/news';
+ @import 'templates/team';
+
+// Core Templates
+@import 'footer.scss';
+@import 'header.scss';

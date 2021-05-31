@@ -1,0 +1,10 @@
+<% var data = {
+    title: "Заголовок | Проект",
+  }; %>
+  <%= _.template(require('./../includes/header.html').default)(data) %>
+  <%= _.template(require('./../includes/join-a-team__content.html').default)(data) %>
+  <%= _.template(require('./../includes/join-a-team__carousel.html').default)(data) %>
+  <%= _.template(require('./../includes/join-a-team__select-company.html').default)(data) %>
+  <%= _.template(require('./../includes/home__cta.html').default)(data) %>
+  <%= _.template(require('./../includes/ticker.html').default)(data) %>
+  <%= _.template(require('./../includes/footer.html').default)(data) %>
