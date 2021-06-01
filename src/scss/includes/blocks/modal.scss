@@ -20,6 +20,7 @@
 	}
 
 	&.show {
+		display: block;
 		right: 0;
 	}
 
@@ -249,6 +250,7 @@
 	}
 
 	&-user {
+		display:none;
 		padding: 0;
 
 		.modal-close {
