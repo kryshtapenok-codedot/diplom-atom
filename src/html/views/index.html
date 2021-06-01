@@ -2,6 +2,7 @@
     title: "Заголовок | Проект",
   }; %>
   <%= _.template(require('./../includes/header.html').default)(data) %>
+  <%= _.template(require('./../includes/modal-company-2__blocks.html').default)(data) %>
   <%= _.template(require('./../includes/home__hero.html').default)(data) %>
   <%= _.template(require('./../includes/home__about-us2.html').default)(data) %>
   <%= _.template(require('./../includes/home__why-atomic.html').default)(data) %>
@@ -10,4 +11,5 @@
   <%= _.template(require('./../includes/home__press.html').default)(data) %>
   <%= _.template(require('./../includes/home__cta.html').default)(data) %>
   <%= _.template(require('./../includes/ticker.html').default)(data) %>
+
   <%= _.template(require('./../includes/footer.html').default)(data) %>

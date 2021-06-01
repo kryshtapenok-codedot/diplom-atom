@@ -37,7 +37,7 @@ var swiper = new Swiper('.swiper-container', {
     loopFillGroupWithBlank:true,
     speed: 2000,
     centeredSlides:true,
-    slideActiveClass:'active'
+    slideToClickedSlide:true
   });
 
 
@@ -48,6 +48,25 @@ var swiper = new Swiper('.swiper-container', {
       duplicated: true,
       delayBeforeStart:0,
       pauseOnHover:true,
-      startVisible:true
     });
   });
+
+$('.modal-close').click(function(){
+  $('.modal-company').toggleClass('show');
+  $('body').css('overflow','');
+  $('.overlay').toggleClass('show');
+});
+
+$(document).ready(function(){
+  $('.swiper-wrapper .active').click(function(){
+    $('.modal-company').addClass('show');
+    $('body').css('overflow','hidden');
+    $('.overlay').addClass('show');
+});
+
+});
+$('.overlay').click(function(){
+  $('.modal-company').toggleClass('show');
+  $('body').css('overflow','');
+  $(this).toggleClass('show');
+});
