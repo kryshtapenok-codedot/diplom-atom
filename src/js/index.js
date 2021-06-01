@@ -81,6 +81,33 @@ var swiper = new Swiper('.swiper1', {
 
   });
 
+  var swiper3 = new Swiper('.swiper3',{
+    autoplay: {
+      delay: 5000,
+      disableOnInteraction: false,
+    },
+
+    on:{
+      slideChangeTransitionStart: function(){
+        $('.review-slider-counter>svg circle').removeAttr('style');
+       
+      },
+
+      slideChangeTransitionEnd:function(){
+       
+      
+        $('.review-slider-counter>svg circle').css({'animation':'circle 4.75s linear alternate forwards'});
+      }
+    },
+    speed:1000,
+    loop:true,
+    navigation: {
+      nextEl: '.swiper-button-next2',
+      prevEl: '.swiper-button-prev',
+    }
+  });
+
+
 
   $(function() {
     $('.marquee').marquee({
