@@ -1,4 +1,4 @@
-var swiper = new Swiper('.swiper-container', {
+var swiper = new Swiper('.swiper1', {
   slidesPerView: 1.2,
   slideActiveClass:'active',
   breakpoints: {
@@ -35,9 +35,49 @@ var swiper = new Swiper('.swiper-container', {
 
     loop:true,
     loopFillGroupWithBlank:true,
-    speed: 2000,
+    speed: 500,
     centeredSlides:true,
-    slideToClickedSlide:true
+    slideToClickedSlide:true,
+
+    on:{
+      slideChangeTransitionEnd: function(){
+        animationEnd = true;
+      },
+      slideChangeTransitionStart: function(){
+        animationEnd = false;
+      } 
+    }
+  });
+
+
+
+  var swiper2 = new Swiper('.swiper2',{
+    loop:true,
+    autoplay: {
+      delay: 5000,
+      disableOnInteraction: false,
+    },
+    speed:1000,
+    on:{
+      slideChangeTransitionStart: function(){
+        $('.review-slider-counter>svg circle').removeAttr('style');
+      },
+
+      slideChangeTransitionEnd:function(){
+
+      
+        $('.review-slider-counter>svg circle').css({'animation':'circle 4.75s linear alternate forwards'});
+      }
+    },
+    navigation: {
+      nextEl: '.swiper-button-next1',
+      prevEl: '.swiper-button-prev',
+    }
+    
+  });
+
+  $('.review-slider-counter-next').click(function(){
+
   });
 
 
@@ -51,22 +91,34 @@ var swiper = new Swiper('.swiper-container', {
     });
   });
 
-$('.modal-close').click(function(){
+  
+
+$('.modal-company .modal-close').click(function(){
   $('.modal-company').toggleClass('show');
   $('body').css('overflow','');
   $('.overlay').toggleClass('show');
 });
-
-$(document).ready(function(){
-  $('.swiper-wrapper .active').click(function(){
+var animationEnd = true;
+$('.about-us-slide').parent().click(function(){
+  if ( animationEnd == true ){
     $('.modal-company').addClass('show');
     $('body').css('overflow','hidden');
     $('.overlay').addClass('show');
+  }
 });
 
-});
+
 $('.overlay').click(function(){
   $('.modal-company').toggleClass('show');
   $('body').css('overflow','');
   $(this).toggleClass('show');
+});
+
+$('.header-mobile-nav').click(function(){
+$('.modal-nav').toggleClass('show');
+$('.overlay').toggleClass('show');
+});
+$('.modal-nav .modal-close').click(function(){
+  $('.overlay').toggleClass('show');
+  $('.modal-nav').toggleClass('show');
 });
