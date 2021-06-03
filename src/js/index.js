@@ -79,7 +79,7 @@ var swiper = new Swiper('.swiper1', {
     
   });
 
-  
+//--------------------------------------------------------------------------------------
 // Слайдер на странице co-found
   var swiper3 = new Swiper('.swiper3',{
     autoplay: {
@@ -106,7 +106,7 @@ var swiper = new Swiper('.swiper1', {
       prevEl: '.swiper-button-prev',
     }
   });
-
+//--------------------------------------------------------------------------------------
 //слайдер на странице join-a-team
   var swiper4 = new Swiper('.swiper4',{
     slidesPerView: 'auto',
@@ -174,7 +174,7 @@ var swiper = new Swiper('.swiper1', {
     });
   });
 
-  
+//-------------------------------------------------------------------------------------- 
 //крестик закрывающий модальное окно modal-company-2
 $('.modal-company-2 .modal-close').click(function(){
   $('.modal-company-2').toggleClass('show');
@@ -233,7 +233,7 @@ $('.modal-nav .modal-close').click(function(){
   $('.modal-nav').toggleClass('show');
 });
 
-
+//--------------------------------------------------------------------------------------
 //страница team
 
 $('.team-page-item').click(function(){
@@ -251,15 +251,16 @@ $('.team-page-item').click(function(){
   }
   
 });
+//--------------------------------------------------------------------------------------
 // страница team закрывающий крестик 
 $('.modal-user .modal-close').click(function(){
   $('.overlay').toggleClass('show');
   $('.modal-user').removeClass('show');
   $('body').css('overflow','');
 });
-
-// страница companies, высчитывание высоты на которую нужно опускать фото компании
-$('.company-page-list .company').hover(function(event){
+//--------------------------------------------------------------------------------------
+// страница companies, высчитывание высоты на которую нужно опускать фото компании для touch(мобильных наведений пальцем)
+$('.company-page-list .company').on('touchstart',function(event){
     console.log($(this));
     console.log($('.company-photo').offset().top);
     let this_elem = false;
@@ -282,3 +283,30 @@ $('.company-page-list .company').hover(function(event){
       $('.company-photo').css('margin-top','650px');
     }
 });
+
+// для наведения курсором мыши
+$('.company-page-list .company').hover(function(event){
+  console.log($(this));
+  console.log($('.company-photo').offset().top);
+  let this_elem = false;
+  let this_number = 0;
+  for (let i = 2 ; i<$('.company-page-list .company').length-2 ;i++){
+      if ($('.company-page-list .company')[i] == this){
+        this_elem = true;
+        this_number = i;
+        break;
+      }
+  }
+  if ($(this).offset().top>350 && $(this).offset().top<900){
+    this_number = (this_number-1) * 100 + 30;
+  $('.company-photo').css('margin-top',this_number);
+  }
+  if($(this).offset().top<350){
+    $('.company-photo').css('margin-top','unset');
+  }
+  if ($(this).offset().top>900){
+    $('.company-photo').css('margin-top','650px');
+  }
+});
+
+//--------------------------------------------------------------------------------------
