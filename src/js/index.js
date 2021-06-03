@@ -112,9 +112,21 @@ var swiper = new Swiper('.swiper1', {
 //слайдер на странице join-a-team
   var swiper4 = new Swiper('.swiper4',{
     slidesPerView: 'auto',
+    breakpoints:{
+      576:{
+        spaceBetween: 0,
+      },
+      990:{
+        spaceBetween: 15,
+      },
+      1200:{
+        spaceBetween: 15,
+      },
+
+    },
     loop:true,
     loopedSlides:3,
-    spaceBetween: 25,
+    spaceBetween: 10,
     centeredSlides:true,
     autoplay: {
       delay: 5000,

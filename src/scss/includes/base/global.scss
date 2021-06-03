@@ -220,7 +220,16 @@ i {
 
 	.swiper-slide{
 
-		width: 280px;
+			width: 278px;
+			@include mobile{
+				width: 320px;
+			}
+			@include tablet{
+				width: 292px;
+			}
+			@include desktop-extra{
+				width: 398;
+			}
 
 	}
 }
