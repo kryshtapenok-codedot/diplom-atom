@@ -79,9 +79,7 @@ var swiper = new Swiper('.swiper1', {
     
   });
 
-  $('.review-slider-counter-next').click(function(){
-
-  });
+  
 // Слайдер на странице co-found
   var swiper3 = new Swiper('.swiper3',{
     autoplay: {
@@ -260,7 +258,7 @@ $('.modal-user .modal-close').click(function(){
   $('body').css('overflow','');
 });
 
-// страница companies, высчитывание высоты на которую нужно опускать фото компании 
+// страница companies, высчитывание высоты на которую нужно опускать фото компании
 $('.company-page-list .company').hover(function(event){
     console.log($(this));
     console.log($('.company-photo').offset().top);
