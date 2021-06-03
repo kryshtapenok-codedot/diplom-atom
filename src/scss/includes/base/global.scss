@@ -220,16 +220,33 @@ i {
 
 	.swiper-slide{
 
-			width: 278px;
-			@include mobile{
-				width: 320px;
-			}
-			@include tablet{
-				width: 292px;
-			}
-			@include desktop-extra{
-				width: 398;
-			}
+		width: 278px;
+
+		@include before-mobile{
+			width: 310px;
+		} 
+		@include mobile{
+			width: 320px;
+		}
+		@include tablet{
+			width: 292px;
+		}
+		/* @include desktop-extra{
+			width: 398px;
+		} */
 
 	}
+}
+
+
+.swiper1{
+
+	.swiper-slide{
+		width: 278px;
+
+
+
+
+	}
+
 }

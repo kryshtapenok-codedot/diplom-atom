@@ -77,7 +77,9 @@
 		cursor: pointer;
 		max-width: 278px;
 		/* min-width: 278px; */ /* remove after js */
-		
+		@include before-mobile{
+			max-width: 310px;
+		}
 		@include desktop {
 			//max-width: 294px;
 			/* min-width: 320px; */ /* remove after js */

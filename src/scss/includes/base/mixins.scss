@@ -73,3 +73,8 @@
 		@content;
 	}
 }
+@mixin before-mobile() {
+	@media (min-width: $mobile) {
+		@content;
+	}
+}

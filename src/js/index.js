@@ -1,9 +1,9 @@
 
 // Верхний слайдер на странице index
 var swiper = new Swiper('.swiper1', {
-  slidesPerView: 1.2,
+  slidesPerView: 'auto',
   slideActiveClass:'active',
-  breakpoints: {
+  /* breakpoints: {
   1800:{
     slidesPerView:6.8,
   },
@@ -29,7 +29,7 @@ var swiper = new Swiper('.swiper1', {
     slidesPerView:1.3
   }
   
-  },
+  }, */
     autoplay: {
       delay: 3000,
       disableOnInteraction: false,
@@ -113,6 +113,9 @@ var swiper = new Swiper('.swiper1', {
   var swiper4 = new Swiper('.swiper4',{
     slidesPerView: 'auto',
     breakpoints:{
+      414:{
+        spaceBetween:10,
+      },
       576:{
         spaceBetween: 0,
       },
@@ -255,4 +258,29 @@ $('.modal-user .modal-close').click(function(){
   $('.overlay').toggleClass('show');
   $('.modal-user').removeClass('show');
   $('body').css('overflow','');
+});
+
+// страница companies, высчитывание высоты на которую нужно опускать фото компании 
+$('.company-page-list .company').hover(function(event){
+    console.log($(this));
+    console.log($('.company-photo').offset().top);
+    let this_elem = false;
+    let this_number = 0;
+    for (let i = 2 ; i<$('.company-page-list .company').length-2 ;i++){
+        if ($('.company-page-list .company')[i] == this){
+          this_elem = true;
+          this_number = i;
+          break;
+        }
+    }
+    if ($(this).offset().top>350 && $(this).offset().top<900){
+      this_number = (this_number-1) * 100 + 30;
+    $('.company-photo').css('margin-top',this_number);
+    }
+    if($(this).offset().top<350){
+      $('.company-photo').css('margin-top','unset');
+    }
+    if ($(this).offset().top>900){
+      $('.company-photo').css('margin-top','650px');
+    }
 });
