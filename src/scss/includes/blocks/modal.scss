@@ -94,9 +94,12 @@
 			margin: 0 0 42px;
 		}
 	}
+	&-company-2{
 
+		display: none;
+	}
 	&-company {
-
+		display: none;
 		&-wrapper {
 			max-width: 640px;
 		}
@@ -123,6 +126,7 @@
 			}
 		}
 
+		
 		&-investors {
 			display: flex;
 			flex-wrap: wrap;

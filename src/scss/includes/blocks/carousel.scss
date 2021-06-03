@@ -7,9 +7,9 @@
 		justify-content: center;
 		position: relative;
 		transform: translateX(-50%);
+		min-width: 0;
 		
 		&::before {
-			background: #fff;
 			bottom: 0;
 			content: '';
 			left: 0;
@@ -27,12 +27,13 @@
 		
 		@include desktop {
 			min-width: 294px;
+			max-width: 294px;
 		}
 		
 		img {
 			border-radius: 8px;
 			display: block;
-			height: auto;
+			height: 368px;
 			max-width: 100%;
 		}
 	}

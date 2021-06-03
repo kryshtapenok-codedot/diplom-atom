@@ -1,3 +1,5 @@
+
+// Верхний слайдер на странице index
 var swiper = new Swiper('.swiper1', {
   slidesPerView: 1.2,
   slideActiveClass:'active',
@@ -50,7 +52,7 @@ var swiper = new Swiper('.swiper1', {
   });
 
 
-
+// нижний слайдер на странице index
   var swiper2 = new Swiper('.swiper2',{
     loop:true,
     autoplay: {
@@ -80,7 +82,7 @@ var swiper = new Swiper('.swiper1', {
   $('.review-slider-counter-next').click(function(){
 
   });
-
+// Слайдер на странице co-found
   var swiper3 = new Swiper('.swiper3',{
     autoplay: {
       delay: 5000,
@@ -107,8 +109,48 @@ var swiper = new Swiper('.swiper1', {
     }
   });
 
+//слайдер на странице join-a-team
+  var swiper4 = new Swiper('.swiper4',{
+    slidesPerView: 'auto',
+    loop:true,
+    loopedSlides:3,
+    spaceBetween: 25,
+    centeredSlides:true,
+    autoplay: {
+      delay: 5000,
+      disableOnInteraction: false,
+    }
+  });
+  /* slidesPerView: 1,
+    
+  breakpoints:{
+    320:{
+      slidesPerView:1.1
+    },
+    340:{
+      slidesPerView:1.2
+    },
+    400:{
+      slidesPerView:1.4
+    },
+    430:{
+      slidesPerView:1.5
+    },
+    470:{
+      slidesPerView:1.6
+    },
+    560:{
+      slidesPerView:2
+    },
+    1200:{
+      slidesPerView:6
+    },
+    1600:{
+      slidesPerView:6.3
+    }
+  }, */
 
-
+//бегущая строка перед footer
   $(function() {
     $('.marquee').marquee({
       duration: 18000,
@@ -185,12 +227,12 @@ $('.team-page-item').click(function(){
   let name = $(this).data('name');
   if (name == undefined){
     name = "andrew_dudum";
-    $("."+name).toggleClass('show')
+    $("."+name).toggleClass('show');
     $('.overlay').toggleClass('show');
     $('body').css('overflow','hidden');
   }
   else{
-    $("."+name).toggleClass('show')
+    $("."+name).toggleClass('show');
     $('.overlay').toggleClass('show');
     $('body').css('overflow','hidden');
   }
