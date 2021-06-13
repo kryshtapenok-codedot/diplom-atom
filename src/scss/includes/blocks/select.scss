@@ -64,9 +64,14 @@
 		min-width: 294px;
 		padding: 16px 18px 12px 47px;
 		position: absolute;
-		right: 0;
+		left:0;
 		top: calc(100% + 13px);
 		z-index: 99;
+
+		@include tablet{
+			left: auto;
+			right: 0;
+		}
 		
 		li {
 			padding: 3px 0 5px;

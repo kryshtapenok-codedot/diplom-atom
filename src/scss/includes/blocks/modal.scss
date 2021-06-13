@@ -26,8 +26,11 @@
 
 	&-menu {
 		align-items: center;
-		display: flex;
+		display: none;
 		padding: 48px;
+		@include tablet{
+			display: flex;
+		}
 
 		&-wrapper {
 			min-width: 600px;

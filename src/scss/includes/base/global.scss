@@ -237,6 +237,15 @@ i {
 
 	}
 }
+::-webkit-scrollbar{
+
+	width: 5px;
+	
+}
+::-webkit-scrollbar-thumb{
+
+	background-color:$color-red;
+}
 
 
 .swiper1{
