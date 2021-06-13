@@ -20,6 +20,7 @@
 	&-item {
 		margin: 0 4px 36px;
 		width: calc(50% - 8px);
+		cursor: pointer;
 		
 		@include mobile {
 			width: calc(100% / 3 - 8px);

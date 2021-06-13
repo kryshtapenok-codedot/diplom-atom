@@ -126,7 +126,6 @@ var swiper = new Swiper('.swiper1', {
 
     },
     loop:true,
-    loopedSlides:3,
     spaceBetween: 10,
     centeredSlides:true,
     autoplay: {
@@ -215,6 +214,12 @@ $('.overlay').click(function(){
 
   if ($('.modal-company-2').hasClass('show')){
      $('.modal-company-2').toggleClass('show');
+  }
+  if ($('.modal-menu').hasClass('show')){
+    $('.modal-menu').toggleClass('show');
+  }
+  if ($('.modal-blog').hasClass('show')){
+    $('.modal-blog').toggleClass('show');
   }
 
   if ($('.modal-user').hasClass('show')){
@@ -310,3 +315,38 @@ $('.company-page-list .company').hover(function(event){
 });
 
 //--------------------------------------------------------------------------------------
+// скрипты находящиеся в блоке "header"
+//открытие модального окна в header
+$('.header-user-nav .btn').click(function(){
+$('.modal-menu').addClass('show');
+$('.overlay').addClass('show');
+$('body').css('overflow','hidden');
+});
+
+// закрытие модального окна в header
+$('.modal-menu .modal-close').click(function(){
+  $('.overlay').toggleClass('show');
+  $('.modal-menu').removeClass('show');
+  $('body').css('overflow','');
+});
+
+//подключение aos для всплывающих страниц
+AOS.init({
+ 
+});
+
+
+//открытие модального окна Bloga
+$('.article .article-more').click(function(event){
+  event.preventDefault();
+  $('.overlay').toggleClass('show');
+  $('.modal-blog').toggleClass('show');
+  $('body').css('overflow','hidden');
+})
+
+//закрытие модального блога 
+$('.modal-blog .modal-close').click(function(){
+  $('.overlay').toggleClass('show');
+  $('.modal-blog').removeClass('show');
+  $('body').css('overflow','');
+});
