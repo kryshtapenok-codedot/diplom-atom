@@ -198,8 +198,8 @@ $('.about-us-slide').parent().click(function(){
 });
 //нижний слайдер на странице index
 var reviews__animationEnd = true;
-$('.review-slide').click(function(){
-  if ( reviews__animationEnd == true ){
+$('.why-atomic .review-slide').click(function(){
+  if ( reviews__animationEnd == true && $('.page-wrapper div').hasClass('.co-found_slider') != true){
     $('.overlay').addClass('show');
     $('.modal-company').addClass('show');
     $('body').css('overflow','hidden');
@@ -226,7 +226,7 @@ $('.overlay').click(function(){
      $('.modal-user').removeClass('show');
   }
   $('body').css('overflow','');
-  $(this).toggleClass('show');
+  $(this).removeClass('show');
 });
 //функции закрывания в странице index
 $('.header-mobile-nav').click(function(){
@@ -332,7 +332,10 @@ $('.modal-menu .modal-close').click(function(){
 
 //подключение aos для всплывающих страниц
 AOS.init({
- 
+  disable: function(){
+    var MaxWidth = 768;
+    return window.innerWidth < MaxWidth;
+  }
 });
 
 
