@@ -353,3 +353,30 @@ $('.modal-blog .modal-close').click(function(){
   $('.modal-blog').removeClass('show');
   $('body').css('overflow','');
 });
+
+
+
+
+// скроллинг до страницы и использование "растущих цифр"
+let firsttry = true;
+console.log($(document).scrollTop()-$('.about-us-counters').offset().top);
+$(window).scroll(function(){
+	let wt = $(window).scrollTop();
+	let wh = $(window).height();
+	let et = $('.about-us-counters').offset().top;
+  if (wt + wh - 100 >= et && firsttry == true){
+   firsttry = false;
+  $('.counter').each(function () {
+    $(this).prop('Counter',0).animate({
+    Counter: $(this).text()
+    }, {
+      duration: 4000,
+      easing: 'swing',
+      step: function (now) {
+        $(this).text(Math.ceil(now));
+      }
+    });
+});
+}
+
+});
